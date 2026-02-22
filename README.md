@@ -44,7 +44,7 @@
 
 #### Loops
 - Count Based Loops
-- For_Each Loops
+- For_Each Loops   (Can only apply through Map or Set. ForEach cannot be applied through list)
 - Dynamic Block Loops
 
 
