@@ -21,3 +21,22 @@
 - list
 - set
 - bool
+
+###### Variables can be passed through
+```text
+1. Default variables ex: variables.tf
+2. Terraform variables ex: terraform.tfvars
+3. Command Line       ex: terraform plan -var="sg_name=allow-all-terraform-cmd"
+4. Environment Variables  ex: export TF_VAR_<NAME>=<VALUE>
+```
+
+###### Precedent goes through
+```text
+1. Command Line
+2. Terraform tf vars
+3. Environment variables
+4. Default Variables
+```
+
+#### Condition
+- Conditional Expression  -> ex: `var.environment == "dev" ? "t3.micro"" : "t3.small"`

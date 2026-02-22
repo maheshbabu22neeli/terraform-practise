@@ -1,7 +1,7 @@
 # Create the EC2 instance
 resource "aws_instance" "aws_ec2_i" {
   ami           = var.ami_id
-  instance_type = var.instance_type
+  instance_type = var.environment == "dev" ? var.instance_type : "t3.small"
 
   # Associate the security group with the instance
   vpc_security_group_ids = [aws_security_group.aws_instance_sg.id]
