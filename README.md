@@ -40,3 +40,11 @@
 
 #### Condition
 - Conditional Expression  -> ex: `var.environment == "dev" ? "t3.micro"" : "t3.small"`
+
+
+#### Loops
+- Count Based Loops
+- For_Each Loops
+- Dynamic Block Loops
+
+

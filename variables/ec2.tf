@@ -12,7 +12,7 @@ resource "aws_instance" "aws_ec2_i" {
 
 resource "aws_security_group" "aws_instance_sg" {
 
-  name = var.sg_name
+  name        = var.sg_name
   description = "Allow TLS inbound and outbound traffic for all"
 
   // outbound

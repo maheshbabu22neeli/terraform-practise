@@ -8,14 +8,14 @@ resource "aws_instance" "aws_ec2_i" {
 
   # Optional: Add tags to the instance
   tags = {
-    Name = "terraform"
+    Name    = "terraform"
     Project = "roboshop"
   }
 }
 
 resource "aws_security_group" "aws_instance_sg" {
 
-  name = "allow-all-terraform"
+  name        = "allow-all-terraform"
   description = "Allow TLS inbound and outbound traffic for all"
 
   // outbound
