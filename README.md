@@ -56,6 +56,39 @@ Moving terraform state to store in S3 bucket instead of local machine.
 So that, in the collaboration environment whom ever working on this terraform infrastructure will have the same state.
 ```
 
+#### Locals
+- Locals are like variables but it has extra capabilities
+- we cannot use variable references in the variables block. It will throw interpolation error.
+
+![img.png](img.png)
+```terraform
+variables.tf
+        
+    variable "domain-name" {
+      type = string
+      default = "local-domain"
+    }
+    
+    variable "environment" {
+      type = string
+      default = "dev"
+    }
+    
+    variable "instance-name" {
+      type = string
+      default = "${var.domain-name}-${var.environment}"
+    }
+```
+- But this can be achieved with locals variables
+```terraform
+locals.tf
+        
+    locals {
+      instance_name = "${var.domain-name}-${var.environment}"
+    }
+```
+- We cannot override the variables declared in locals
+- We can store functions or expressions in locals
 
 
 
