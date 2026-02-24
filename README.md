@@ -47,4 +47,9 @@
 - For_Each Loops   (Can only apply through Map or Set. ForEach cannot be applied through list)
 - Dynamic Block Loops
 
+#### Data Sources
+- Data sources is used to GET the details from the provider
+
+
+
 
