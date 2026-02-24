@@ -50,6 +50,12 @@
 #### Data Sources
 - Data sources is used to GET the details from the provider
 
+#### Remote State
+```text
+Moving terraform state to store in S3 bucket instead of local machine.
+So that, in the collaboration environment whom ever working on this terraform infrastructure will have the same state.
+```
+
 
 
 
