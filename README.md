@@ -90,5 +90,13 @@ locals.tf
 - We cannot override the variables declared in locals
 - We can store functions or expressions in locals
 
-###
+## Provisioners
+- Provisioners are nothing but, where our infrastructure executes
+- It has two types
+  - local-exec  -> where terraform executes. We plan, apply, destroy terraform nothing by local(witer windows/linux/ubuntu) machines
+  - remote-exec -> where terraform executes inside the resources. Example: we have created an EC2 instance using terraform and running terraform in that EC2 instance
+- Provisioners will be executed either at apply or destroy time, but not at update resource.
+- 
+
+
 
