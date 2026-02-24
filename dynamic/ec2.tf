@@ -1,8 +1,8 @@
 # Create the EC2 instance
 resource "aws_instance" "roboshop" {
 
-  ami = var.ami_id
-  instance_type = var.instance_type
+  ami           = "ami-0220d79f3f480ecf5"
+  instance_type = "t3.micro" # A free-tier eligible instance type
 
   # Associate the security group with the instance
   vpc_security_group_ids = [aws_security_group.aws_instance_sg.id]
