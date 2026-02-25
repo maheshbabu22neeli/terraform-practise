@@ -121,6 +121,21 @@ terraform workspace select <environment_name>
 2. Since code is same, every change in `non-prod` will directly apply to `prod` environment
 
 ### tfvars
+- In tfvars we have to create different folders based on our environment
+- We can ask terraform to store the state in the given bucket mentioned in `backend.tf`
+  - command `terraform init -backend-config=dev/backend.tf`
+- Then we can tell terraform to `plan` the infrastructure execution by passing `terraform.tfvars` file
+  - command `terraform plan -var-file=dev/terraform.tfvars`
+- Then `apply` terraform changes as below
+  - command `terraform plan -var-file=dev/terraform.tfvars -auto-approve`
 
+##### Advantages
+- same as workspace
+1. It creates the state in different folders automatically
+2. Same code and consistent environments
 
+##### Disadvantages
+- same as workspace
+1. Sometimes we cannot differ any piece of code for `non-prod` and `prod` environment
+2. Since code is same, every change in `non-prod` will directly apply to `prod` environment
 
