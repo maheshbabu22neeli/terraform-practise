@@ -87,16 +87,40 @@ So that, in the collaboration environment whom ever working on this terraform in
       instance_name = "${var.domain-name}-${var.environment}"
     }
 ```
-- We cannot override the variables declared in locals
+- We cannot override the variables declared in locals, but it can override the default variables
 - We can store functions or expressions in locals
 
 ## Provisioners
 - Provisioners are nothing but, where our infrastructure executes
 - It has two types
-  - local-exec  -> where terraform executes. We plan, apply, destroy terraform nothing by local(witer windows/linux/ubuntu) machines
+  - local-exec  -> where terraform executes. We plan, apply, destroy terraform nothing but local(like., our windows/ec2 linux/ubuntu) machines
   - remote-exec -> where terraform executes inside the resources. Example: we have created an EC2 instance using terraform and running terraform in that EC2 instance
 - Provisioners will be executed either at apply or destroy time, but not at update resource.
-- 
+
+## Workspaces
+- If we want to create multiple environment, we can use Terraform workspace.
+- Workspace can be achieved in 3 ways.
+  1. workspace
+  2. tfvars
+  3. modules
+
+
+### workspace
+- Terraform has given a special variable called `terraform.workspace`
+```terraform
+terraform workspace new <environment_name>
+terraform workspace list
+terraform workspace select <environment_name>
+```
+##### Advantages
+1. It creates the state in different folders automatically
+2. Same code and consistent environments
+
+##### Disadvantages
+1. Sometimes we cannot differ any piece of code for `non-prod` and `prod` environment
+2. Since code is same, every change in `non-prod` will directly apply to `prod` environment
+
+### tfvars
 
 
 
