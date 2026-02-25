@@ -62,7 +62,7 @@ So that, in the collaboration environment whom ever working on this terraform in
 
 ![img.png](img.png)
 ```terraform
-variables.tf
+//variables.tf
         
     variable "domain-name" {
       type = string
@@ -81,7 +81,7 @@ variables.tf
 ```
 - But this can be achieved with locals variables
 ```terraform
-locals.tf
+//locals.tf
         
     locals {
       instance_name = "${var.domain-name}-${var.environment}"
